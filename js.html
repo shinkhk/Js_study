@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer>
+        //참조 데이터 타입 (레퍼런스)
+        //객체 배열 함수
+
+        //함수 선언문
+        function fun1(value){
+            return value;
+        }
+
+        //함수선언문
+        function fun2(){
+            const 조건 = true;
+            if(조건){
+                return;
+            }
+            console.log('출력');
+        //  return; 
+        }
+
+        //익명함수
+        var fun3 = function(value){
+            return value;
+        }
+
+        //화살표 함수
+        var fun4 = (value) => value;
+        var fun5 = (value) => { //여러줄을 쓸땐 중괄호 넣기
+            return value;
+        }
+        
+
+        
+        //함수 내용이 나온다
+        console.log(fun1);
+        //실행되면 1로 변함
+        console.log(fun1(1));
+        //함수는 실행되면 값이 된다
+        console.log(fun2())
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
