@@ -1,0 +1,129 @@
+<script>
+/*     number
+    const num = 2.843215;
+    console.log(`${num} toFixed: ${num.toFixed(2)}`); //괄호 안에 숫자소수점 자리 만큼 보여주고 반올림
+    console.log(`${num} toFixed: ${num.toString()}`); //타입을 스트링으로 
+    console.log(typeof num); // 변수타입 반환
+    console.log(typeof num.toString()); // *
+
+/*     -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    //string
+/*     const str = "ABcde";
+    console.log(`${str} charAt(): ${str.charAt(2)}`);                //번호에 할당된 값을 반환
+    console.log(`${str} concat(): ${str.concat("fG")}`);             //문자열을 추가함 
+    console.log(`${str} endsWith(): ${str.endsWith("de")}`);         //문자열의 마지막을 검사함 true,fales를 반환
+    console.log(`${str} startsWith(): ${str.startsWith("Ab")}`);     //문자열의 처음을 검사함 true,fales를 반환
+    console.log(`${str} includes(): ${str.includes("A",1)}`);        //문자열이 주어진 값을 포함하는지 검사함 true,fales를 반환 추가 숫자는 어디서부터 검사할지 판단함
+    console.log(`${str} indexOf(): ${str.indexOf("d")}`);            //주어진 값에 문자열의 위치를 반환 (없을경우 -1 반환)
+    console.log(`${str} length: ${str.length}`);                     //문자열의 길이를 반환
+    console.log(`${str} padStart(): ${str.padStart(10,"가")}`);      // 번호만큼 문자열을 처음부터 생성하고 그만큼 매개변수로 받은 문자열을 추가함
+    console.log(`${str} padEnd(): ${str.padEnd(10,"가")}`);          // 번호만큼 문자열을 뒤부터 생성하고 그만큼 매개변수로 받은 문자열을 추가함
+    console.log(`${str} repeat(): ${str.repeat(5)}`);                // 주어진 매개변수 만큼 문자열을 반복함
+    console.log(`${str} replace(): ${str.replace("cd","")}`);        // 첫 매개변수를 다음 매개변수로 교체함 값을 주지 않으면 지워짐
+    console.log(`${str} slice(): ${str.slice(1,4)}`);                // 문자열을 자름
+    console.log(`${str} split(): ${str.split("")}`);                 // 매겨변수로 받은 문자열을 기준으로 나눔 빈값 가능 받은 문자열은 지워짐
+    console.log(`${str} substring(): ${str.substring(2)}`);          // 매겨변수로 받은 문자열 부터 반환
+    console.log(`${str} toUpperCase(): ${str.toUpperCase()}`);       // 소문자를 대문자로 변경
+    console.log(`${str} toLowerCase(): ${str.toLowerCase()}`);       // 대문자를 소문자 변경
+    console.log(`${str} trim(): ${"    ab cd   ".trim()}`);          // 문자열의 처음과 끝 공백을 지워줌 */
+    
+/*     -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        // array
+    const arr = ["A", "B", "c", "d"];
+    console.log(`${arr} concat("e", "f") : ${arr.concat("e", "f")}`);
+    console.log(`${arr} concat(["g"]) : ${arr.concat(["g"])}`);
+    //   console.log(`${arr} copyWithin(0, 1, 2) : ${arr.copyWithin(0, 1, 2)}`);
+    //   console.log(`${arr} fill("a") : ${arr.fill("a")}`);
+    console.log(
+        [
+        ["a", "b"],
+        ["c", "d"],
+        ].flat()
+    );
+    //   console.log(`${arr} pop() : ${arr.pop()}`);
+    //   console.log(arr);
+    console.log(`${arr} push("g") : ${arr.push("h")}`);
+    console.log(arr);
+    console.log(`${arr} join("") : ${arr.join(" ")}`);
+    console.log(`${arr} reverse() : ${arr.reverse()}`);
+
+    // forEach, filter, map, reduce, every, find, some
+    // forEach -> 반복작업
+    const callbackFn = (value) => {
+        console.log(value);
+    };
+
+    arr.forEach(callbackFn);
+    arr.forEach((value) => console.log(value));
+
+    // filter -> 조건 필터링해서 배열 반환
+    const predicate1 = (value) => {
+        return value.charCodeAt(0) > 97;
+    };
+
+    console.log(arr.filter(predicate1));
+    console.log(arr.filter((value) => value == "g"));
+
+    // map -> 배열의 요소를 변환
+    console.log(arr.map((value) => value));
+
+    // reduce -> 요소 합치기
+    // every -> 모든 요소가 조건에 부합하는지
+
+    //   if (prompt("아이디를 입력하세요")) {
+    //     console.log("조건성공");
+    //   } else {
+    //     alert("아이디를 입력하세요.");
+    //   }
+
+    // some -> 하나의 요소라도 조건에 부합하는지
+    // find -> 조건에 부합하는 요소 찾기
+
+/*     -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    // obj
+    const obj = {
+        key: "value",
+        func(value) {
+        return value = 10;
+        },
+        array: [1, 2, 3, 4],
+        obj: {
+        key: "value1",
+        },
+    };
+    console.log(obj.key);           //오브젝트의 key를 반환
+    console.log(obj.obj.key);       //오브젝트안의 오브젝트 key를 반환
+    console.log(obj.func());        //오브젝트 안의 함수 리턴값을 반환
+
+/*     -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    // Math
+    console.log(Math.PI);                                                       // pi값 반환
+    console.log(`Math.abs(-1) : ${Math.abs(-1)}`);                              // 절대닶 반환
+    console.log(`Math.ceil(1.2) : ${Math.ceil(1.2)}`);                          // 소수점 올림
+    console.log(`Math.floor(1.5) : ${Math.floor(1.5)}`);                        // 소수점 내림
+    console.log(`Math.round(1.2) : ${Math.round(1.2)}`);                        // 소수점 반올림
+    console.log(`Math.round(1.5) : ${Math.round(1.5)}`);
+    console.log(`Math.pow(2, 3) : ${Math.pow(2, 3)}`);                          // 2의3승 즉 제곱근 반환
+    const arr1 = [1, 2, 3];                           
+    console.log(`Math.max(...arr1) : ${Math.max(...arr1)}`);                    // 배열의 최대값 반환
+    console.log(`Math.min(...arr1) : ${Math.min(...arr1)}`);                    // 배열의 최소값 반환
+    console.log(`Math.random() : ${Math.floor(Math.random() * 45)}`);           // 45까지의 랜덤한 숫자 반환
+
+/*     -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    // Date
+    // 1970년 1월 1일 12시 정각부터 ms 단위로 숫자를 리턴
+    console.log(`Date.now() : ${Date.now()}`);                                  
+    const myDate = new Date("2023-01-07T15:00:00.000Z");
+    console.log(`myDate : ${myDate}`);
+    console.log(`myDate.getFullYear() : ${myDate.getFullYear()}`);
+    console.log(`myDate.getDate() : ${myDate.getDate()}`);
+
+    console.log(`myDate.getMonth() : ${myDate.getMonth()}`);
+    console.log(`myDate.getDay() : ${myDate.getDay()}`);
+    console.log(`myDate.toJSON() : ${myDate.toJSON()}`);
+</script>

@@ -1,0 +1,47 @@
+<script>
+    //break
+    //while, for 문에서 break가 실행되면 while, for 문이 종료된다
+    
+    const breakFunc = () => {
+        let count = 0;
+        while(count < 100){
+            console.log(`${count} break테스트`)
+            if(count > 10){
+                break;
+            }
+            count = count + 1;
+        }
+        console.log("break빠져나옴");
+    };
+    // breakFunc();
+
+    //retrun
+    //함수 안에서 return이 실행되면 함수가 종료된다
+    const retrunFunc = () => {
+        let count = 0;
+        while(count < 100){
+            console.log(`${count} retrun테스트`)
+            if(count > 10){
+                return;
+            }
+            count = count + 1;
+        }
+        console.log("retrun빠져나옴"); //리턴되어 실행 안됨
+    };
+    // retrunFunc();
+
+    //while, for문에서 continue
+    const continueFunc = () => {
+        let count = 0;
+        while(count < 100){
+
+            count = count + 1;
+            if(count == 98){
+                continue;
+            }
+            console.log(`${count} continue테스트`);
+        }
+        console.log("continue빠져나옴");
+    };
+    continueFunc();
+</script>

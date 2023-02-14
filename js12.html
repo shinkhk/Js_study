@@ -1,0 +1,42 @@
+<script>
+    //async await
+    //1.
+    const noAsyncFunc = () =>{
+        const prm1 = new Promise((resulve, reject)=>{
+            setTimeout(()=>{
+                resulve("prm1완료");
+            },2000);
+        });
+
+        const prm2 = new Promise((resulve, reject)=>{
+            setTimeout(()=>{
+                resulve("prm2완료");
+            },1000);
+        });
+        
+        prm1.then((response)=>{console.log(response)});
+        prm2.then((response)=>{console.log(response)});
+    }
+    // noAsyncFunc();
+
+    const asyncFunc = async() =>{
+        const prm1 = new Promise((resulve, reject)=>{
+            setTimeout(()=>{
+                resulve("prm1완료");
+            },2000);
+        });
+
+        const prm2 = new Promise((resulve, reject)=>{
+            setTimeout(()=>{
+                resulve("prm2완료");
+            },1000);
+        });
+
+        const res1 = await prm1;    //2초뒤 풀림
+        console.log(res1);
+        const res2 = await prm2;    //이미 열려있음
+        console.log(res2);
+    }
+    // async 함수는 promise를 리턴함
+    asyncFunc();
+</script>

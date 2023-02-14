@@ -1,0 +1,35 @@
+<script>
+    // console.log(Data.now());
+    // setTimeout(()=>{
+    //     console.log("안녕");
+    //     console.log(data.now());
+    // }, 2000);
+
+    // setTimeout();
+    
+    // const myInter = setInterval(()=>{
+    //     console.log(Date.now())
+    // },2000);
+
+    // setInterval(()=>{
+    // clear.log(myInter);
+    // },1000);
+    
+    
+    //보통 통신시 사용, 또는 입출력
+    const prm = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("택배도착");
+            // reject("택배분실");
+        },2000)
+    });
+
+    prm.then((response)=>{      //성공시 작동
+        console.log(response); 
+    }).catch((errer)=>{
+        console.log(errer);
+    }).finally(()=>{            //성공이든 실패든 작동
+        console.log("finaly");
+    });
+</script>
+
